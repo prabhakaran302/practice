@@ -10,6 +10,7 @@ public class MaxSizeSquareSubMatrixWithAll1 {
 	private static int maximumSizeSquareSubmatrixWithAllOnes(int[][] matrix) {
 		int row = matrix.length + 1;
 		int col = matrix[0].length + 1;
+		int max = 0;
 		int res[][] = new int[row][col];
 		for (int i = 0; i < row; i++)
 			res[i][0] = 0;
@@ -21,10 +22,11 @@ public class MaxSizeSquareSubMatrixWithAll1 {
 				if (matrix[i - 1][j - 1] == 0) {
 					res[i][j] = 0;
 				} else {
-					res[i][j] = Math.min(res[i - 1][j - 1], Math.min(res[i - 1][j], res[i][j - 1]));
+					res[i][j] = Math.min(res[i - 1][j - 1], Math.min(res[i - 1][j], res[i][j - 1])) + 1;
+					max = Math.max(res[i][j], max);
 				}
 			}
 		}
-		return res[row][col];
+		return max;
 	}
 }
