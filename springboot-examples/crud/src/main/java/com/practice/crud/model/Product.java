@@ -1,4 +1,4 @@
-package com.crud.model;
+package com.practice.crud.model;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-
 @Data
 public class Product {
     @Id

@@ -1,4 +1,4 @@
-package com.crud.controller;
+package com.practice.crud.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.crud.model.Product;
-import com.crud.service.impl.ProductService;
+import com.practice.crud.model.Product;
+import com.practice.crud.service.impl.ProductService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

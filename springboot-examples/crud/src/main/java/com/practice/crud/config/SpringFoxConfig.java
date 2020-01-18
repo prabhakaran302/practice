@@ -1,4 +1,4 @@
-package com.crud.config;
+package com.practice.crud.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

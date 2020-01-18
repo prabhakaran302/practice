@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/microapp?allowPublicKeyRetrieval=true&useSSL=false
+        username: root
+        password: system
+        platform: mysql
+    jpa:
+        hibernate:
+            ddl-auto: update
+        database-platform: org.hibernate.dialect.MySQL57Dialect
+        generate-ddl: true
+        show-sql: true
+
+logging:
+    level:
+        org:
+           springframework=DEBUG

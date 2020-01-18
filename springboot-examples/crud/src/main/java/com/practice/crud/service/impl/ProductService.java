@@ -1,10 +1,10 @@
-package com.crud.service.impl;
+package com.practice.crud.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.crud.model.Product;
-import com.crud.repository.ProductRespository;
+import com.practice.crud.model.Product;
+import com.practice.crud.repository.ProductRespository;
 
 import java.util.List;
 import java.util.Optional;
