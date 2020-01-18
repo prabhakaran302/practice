@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +17,7 @@ import com.practice.transaction.service.HealthInsuranceService;
 import com.practice.transaction.service.OrganizationService;
 
 @Service
-@Transactional(propagation = Propagation.REQUIRED, rollbackFor = InvalidCovergaeAmountException.class)
+@Transactional(propagation = Propagation.REQUIRED, rollbackFor = InvalidCovergaeAmountException.class, isolation = Isolation.SERIALIZABLE)
 public class OrganzationServiceImpl implements OrganizationService {
 
 	@Autowired
@@ -46,7 +47,6 @@ public class OrganzationServiceImpl implements OrganizationService {
 	}
 
 	@Override
-	@Transactional
 	public void leaveOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance) {
 		employeeService.deleteEmployeeById(employee.getId());
 		healthInsuranceService.deleteEmployeeHealthInsuranceById(employeeHealthInsurance.getEmpId());
