@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.practice.transaction.dto.OrganizationResponse;
 import com.practice.transaction.dto.OrgansizationRequest;
+import com.practice.transaction.exception.InvalidCovergaeAmountException;
 import com.practice.transaction.model.Employee;
 import com.practice.transaction.model.EmployeeHealthInsurance;
 import com.practice.transaction.service.OrganizationService;
@@ -27,7 +28,8 @@ public class TransactionController {
 	private OrganizationService organizationService;
 
 	@PostMapping
-	public ResponseEntity<OrganizationResponse> create(@Valid @RequestBody OrgansizationRequest organsizationRequest) {
+	public ResponseEntity<OrganizationResponse> create(@Valid @RequestBody OrgansizationRequest organsizationRequest)
+			throws InvalidCovergaeAmountException {
 
 		Employee emp = new Employee();
 		emp.setId(organsizationRequest.getEmployeeId());
